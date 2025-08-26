@@ -1,0 +1,318 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring the Infinite Universe</title>
+    <meta name="description"
+          content="Journey through the cosmos - explore the universe, solar system, galaxies, black holes, and space exploration">
+    <link rel="stylesheet" href="{% static 'apps/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <h1>Cosmos Explorer</h1>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" aria-label="Go to home section">Home</a></li>
+            <li><a href="#universe" aria-label="Go to universe section">Universe</a></li>
+            <li><a href="#solar-system" aria-label="Go to solar system section">Solar System</a></li>
+            <li><a href="#galaxies" aria-label="Go to galaxies section">Galaxies</a></li>
+            <li><a href="#black-holes" aria-label="Go to black holes section">Black Holes</a></li>
+            <li><a href="#exploration" aria-label="Go to space exploration section">Exploration</a></li>
+            <li><a href="#gallery" aria-label="Go to gallery section">Gallery</a></li>
+            <li><a href="#contact" aria-label="Go to contact section">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Exploring the Infinite Universe</h1>
+        <p class="hero-subtitle">Journey through the cosmos and discover the wonders that lie beyond our world</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">13.8B</span>
+                <span class="stat-label">Years Old</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">2T</span>
+                <span class="stat-label">Galaxies</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Possibilities</span>
+            </div>
+        </div>
+    </div>
+    <div class="floating-elements">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+    </div>
+</section>
+
+<!-- About the Universe -->
+<section id="universe" class="section">
+    <div class="container">
+        <h2 class="section-title">About the Universe</h2>
+        <div class="universe-content">
+            <div class="universe-intro">
+                <p>The universe is everything we can touch, feel, sense, measure, or detect. It includes living things,
+                    planets, stars, galaxies, dust clouds, light, and even time itself.</p>
+            </div>
+
+            <div class="timeline-section">
+                <h3>The Big Bang & Timeline</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>0 seconds</h4>
+                            <p>The Big Bang - Universe begins from a singularity</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>380,000 years</h4>
+                            <p>First atoms form, universe becomes transparent</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>1 billion years</h4>
+                            <p>First stars and galaxies begin to form</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>13.8 billion years</h4>
+                            <p>Present day - Universe continues expanding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Solar System -->
+<section id="solar-system" class="section">
+    <div class="container">
+        <h2 class="section-title">Our Solar System</h2>
+        <div class="planets-grid">
+
+            {% for planet in planets %}
+                <div class="planet-card">
+                    <div class="planet-image"
+                         style="background: radial-gradient(circle, {{ planet.icon1 }}, {{ planet.icon2 }});"></div>
+                    <h3>{{ planet.title }}</h3>
+                    <p class="planet-size">Diameter: {{ planet.diameter }} km</p>
+                    <p class="planet-distance">Distance: {{ planet.distance }} AU</p>
+                    <p class="planet-fact">{{ planet.description }}</p>
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Galaxies & Stars -->
+<section id="galaxies" class="section">
+    <div class="container">
+        <h2 class="section-title">Galaxies & Stars</h2>
+        <div class="galaxies-content">
+            {% for group in groups %}
+                <div class="galaxy-types">
+                    <h3>{{ group.title }}</h3>
+                    <div class="galaxy-grid">
+                        {% for star in group.stars.all %}
+                            <div class="galaxy-card">
+                                <h4>{{ stxar.title }}</h4>
+                                <p>{{ star.description }}</p>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Black Holes & Dark Matter -->
+<section id="black-holes" class="section">
+    <div class="container">
+        <h2 class="section-title">Black Holes & Dark Matter</h2>
+        <div class="mysteries-content">
+
+            {% for holes_matter in holes_matters %}
+                <div class="mystery-card">
+                    <h3>{{ holes_matter.title }}</h3>
+                    <p>{{ holes_matter.description }}</p>
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Space Exploration -->
+<section id="exploration" class="section">
+    <div class="container">
+        <h2 class="section-title">Space Exploration</h2>
+        <div class="exploration-timeline">
+            {% for Exploration in Explorations %}
+                <div class="era-section">
+                    <h3>{{ Exploration.title }}</h3>
+                    <div class="achievement-grid">
+                        {% for About in Exploration.about.all %}
+                            <div class="achievement-card">
+                                <h4>{{ About.title }}</h4>
+                                <p>{{ About.description }}</p>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="section">
+    <div class="container">
+        <h2 class="section-title">Cosmic Gallery</h2>
+        <div class="gallery-grid">
+            {% for gallery in galleries %}
+                <div class="gallery-item">
+                    <img src="{{ gallery.image.url }}"
+                         alt="{{ gallery.title }}">
+                    <div class="gallery-overlay">
+                        <h4>{{ gallery.title }}</h4>
+                        <p>{{ gallery.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Join Our Cosmic Journey</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for the latest discoveries and space exploration news.</p>
+                <div class="contact-stats">
+                    <div class="contact-stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Subscribers</span>
+                    </div>
+                    <div class="contact-stat">
+                        <span class="stat-number">Weekly</span>
+                        <span class="stat-label">Updates</span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" action="{% url 'create-register' %}" method="POST"
+                  aria-label="Newsletter subscription form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required aria-describedby="name-help">
+                    <small id="name-help">Your full name</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required aria-describedby="email-help">
+                    <small id="email-help">We'll never share your email</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="interests">Interests</label>
+                    <select id="interests" name="interest" aria-describedby="interests-help">
+                        <option value="">Select your main interest</option>
+                        {% for v, k in interests %}
+                            <option value="{{ v }}">{{ k }}</option>
+
+                        {% endfor %}
+
+
+                    </select>
+                    <small id="interests-help">Help us personalize your content</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message (Optional)</label>
+                    <textarea id="message" name="message" rows="4" aria-describedby="message-help"></textarea>
+                    <small id="message-help">Any questions or topics you'd like to see covered?</small>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Subscribe to Updates</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Cosmos Explorer</h3>
+                <p>Exploring the infinite universe, one discovery at a time.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#universe">Universe</a></li>
+                    <li><a href="#solar-system">Solar System</a></li>
+                    <li><a href="#galaxies">Galaxies</a></li>
+                    <li><a href="#exploration">Exploration</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" aria-label="Privacy policy">Privacy</a></li>
+                    <li><a href="#" aria-label="Terms of service">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cosmos Explorer. Made with ❤️ for space enthusiasts.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
