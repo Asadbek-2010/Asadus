@@ -1,0 +1,21 @@
+[Unit]
+Description=Space
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/var/www/Asadbek/Asadbek
+ExecStart=/var/www/Asadbek/Asadbek/.venv/bin/gunicorn --workers 2 --bind unix:/var/www/Asadbek/Asadbek/Logistics.sock root.wsgi:application
+# ExecStart=/var/www/Asadbek/Asadbek/.venv/bin/gunicorn --workers 2 --bind localhost:8000  root.wsgi:application
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+systemctl enable space.service
+systemctl start space.service
+systemctl status space.service
