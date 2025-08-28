@@ -16,4 +16,6 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            touch NEW.txt
+            cd /var/www/Asadbek/Asadbek
+            git pull
+            systemctl restart space.service
