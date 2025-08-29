@@ -2,16 +2,20 @@
 server {
     server_name black-hole.shop;
 
-    location = /favicon.ico {
-        access_log off;
-        log_not_found off;
-    }
+   location /static/ {
+        alias /var/www/Asadbek/Asadbek/static/;
+   }
 
-    location / {
+   location /media/ {
+        alias /var/www/Asadbek/Asadbek/media/;
+   }
+
+
+   location / {
         include proxy_params;
         proxy_pass http://unix:/var/www/Asadbek/Asadbek/Logistics.sock;
         # proxy_pass http://localhost:8000;
-    }
+   }
 
     listen 443 ssl; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/black-hole.shop/fullchain.pem; # managed by Certbot
