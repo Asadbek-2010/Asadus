@@ -105,6 +105,9 @@ class Register(Model):
     interest = CharField(max_length=20, choices=Interests.choices)
     message = TextField()
 
+    def __str__(self):
+        return self.name
+
 
 
 
