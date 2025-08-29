@@ -113,6 +113,7 @@ class Register(Model):
 class Faktlar(Model):
     title = CharField(max_length=100)
     description = TextField()
+    fakt = ForeignKey('apps.Fakt_turi', CASCADE, related_name='fakt')
 
     def __str__(self):
         return self.title
