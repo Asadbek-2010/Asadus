@@ -243,21 +243,21 @@
                   aria-label="Newsletter subscription form">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Isming</label>
                     <input type="text" id="name" name="name" required aria-describedby="name-help">
-                    <small id="name-help">Your full name</small>
+                    <small id="name-help">Sizning tto'liq ismingiz</small>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required aria-describedby="email-help">
-                    <small id="email-help">We'll never share your email</small>
+                    <small id="email-help">Biz hech qachon elektron pochtangizni baham ko'rmaymiz</small>
                 </div>
 
                 <div class="form-group">
-                    <label for="interests">Interests</label>
+                    <label for="interests">Qiziqishlar</label>
                     <select id="interests" name="interest" aria-describedby="interests-help">
-                        <option value="">Select your main interest</option>
+                        <option value="">Asosiy qiziqishingizni tanlang</option>
                         {% for v, k in interests %}
                             <option value="{{ v }}">{{ k }}</option>
 
@@ -265,17 +265,17 @@
 
 
                     </select>
-                    <small id="interests-help">Help us personalize your content</small>
+                    <small id="interests-help">Kontentingizni shaxsiylashtirishga yordam bering</small>
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Message (Optional)</label>
+                    <label for="message">O'zingiz haqingizda yozing:</label>
                     <textarea id="message" name="message" rows="4" aria-describedby="message-help"></textarea>
-                    <small id="message-help">Any questions or topics you'd like to see covered?</small>
+                    <small id="message-help">Yopiq ko'rishni istagan savollar yoki mavzular bormi?</small>
                 </div>
 
                 <button type="submit" class="submit-btn">
-                    <span>Subscribe to Updates</span>
+                    <span>Yangilanishlarga obuna bo'ling</span>
                 </button>
             </form>
         </div>
