@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from apps.models import Galaxy, Planet, Group, Star, Gallery, Exploration, About, Holes_Matter, Register
+from apps.models import Galaxy, Planet, Group, Star, Gallery, Exploration, About, Holes_Matter, Register, Faktlar, \
+    Fakt_turi
 
 # from apps.models import Product, Category
 #
@@ -15,3 +16,5 @@ admin.site.register(Exploration)
 admin.site.register(About)
 admin.site.register(Holes_Matter)
 admin.site.register(Register)
+admin.site.register(Faktlar)
+admin.site.register(Fakt_turi)

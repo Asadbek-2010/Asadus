@@ -43,11 +43,13 @@ class Planet(Model):
     def __str__(self):
         return self.title
 
+
 class Group(Model):
     title = CharField(max_length=100)
 
     def __str__(self):
         return self.title
+
 
 class Star(Model):
     title = CharField(max_length=100)
@@ -66,13 +68,12 @@ class Gallery(Model):
     def __str__(self):
         return self.title
 
+
 class Exploration(Model):
     title = CharField(max_length=100)
 
     def __str__(self):
         return self.title
-
-
 
 
 class About(Model):
@@ -109,5 +110,16 @@ class Register(Model):
         return self.name
 
 
+class Faktlar(Model):
+    title = CharField(max_length=100)
+    description = TextField()
+
+    def __str__(self):
+        return self.title
 
 
+class Fakt_turi(Model):
+    title = CharField(max_length=100)
+
+    def __str__(self):
+        return self.title

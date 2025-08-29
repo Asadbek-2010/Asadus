@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import CreateView
 
 from apps.forms import RegisterModelForm
-from apps.models import Planet, Galaxy, Group, Gallery, Exploration, About, Holes_Matter, Register
+from apps.models import Planet, Galaxy, Group, Gallery, Exploration, About, Holes_Matter, Register, Faktlar, Fakt_turi
 
 
 def index_view(request):
@@ -15,6 +15,8 @@ def index_view(request):
         'Abouts': About.objects.all(),
         'holes_matters': Holes_Matter.objects.all(),
         'registers': Register.objects.all(),
+        'Faktlars': Faktlar.objects.all(),
+        'Fakt_turis': Fakt_turi.objects.all(),
         'interests': Register.Interests.choices
 
     }
