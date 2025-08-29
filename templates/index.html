@@ -71,26 +71,37 @@
             </div>
 
             <div class="timeline-section">
-                {% for Fakt_turi in Fakt_turis %}
-                	<h3>{{ Fakt_turi.title}}</h3>
-
-                    {% for Faktlar in Faktlars %}
-                    	<div class="timeline">
+                <h3>The Big Bang & Timeline</h3>
+                <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
-                            <h4>{{ Faktlar.title }}</h4>
-                            <p>{{ Faktlar.description}}</p>
+                            <h4>0 seconds</h4>
+                            <p>The Big Bang - Universe begins from a singularity</p>
                         </div>
                     </div>
-
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>380,000 years</h4>
+                            <p>First atoms form, universe becomes transparent</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>1 billion years</h4>
+                            <p>First stars and galaxies begin to form</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>13.8 billion years</h4>
+                            <p>Present day - Universe continues expanding</p>
+                        </div>
+                    </div>
                 </div>
-                    {% endfor %}
-
-
-                {% endfor %}
-
-
             </div>
         </div>
     </div>
