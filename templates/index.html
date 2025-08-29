@@ -37,7 +37,8 @@
 <section id="home" class="hero">
     <div class="hero-content">
         <h1 class="hero-title">Cheksiz olamni o'rganish</h1>
-        <p class="hero-subtitle">Kosmos bo'ylab sayohat qiling va bizning dunyomizdan tashqarida joylashgan ajoyibotlarni kashf eting</p>
+        <p class="hero-subtitle">Kosmos bo'ylab sayohat qiling va bizning dunyomizdan tashqarida joylashgan
+            ajoyibotlarni kashf eting</p>
         <div class="hero-stats">
             <div class="stat">
                 <span class="stat-number">13.8B</span>
@@ -66,41 +67,28 @@
         <h2 class="section-title">Koinot haqida</h2>
         <div class="universe-content">
             <div class="universe-intro">
-                <p>Koinot biz teginishimiz, his qilishimiz, his qilishimiz, o'lchashimiz yoki aniqlay oladigan hamma narsadir. U tirik mavjudotlarni o'z ichiga oladi,
+                <p>Koinot biz teginishimiz, his qilishimiz, his qilishimiz, o'lchashimiz yoki aniqlay oladigan hamma
+                    narsadir. U tirik mavjudotlarni o'z ichiga oladi,
                     sayyoralar, yulduzlar, galaktikalar, chang bulutlari, yorug'lik va hatto vaqtning o'zi.</p>
             </div>
 
             <div class="timeline-section">
-                <h3>The Big Bang & Timeline</h3>
+                {% for Fakt_turi in Fakt_turis %}
+                    <h3>{{ Fakt_turi.title }}</h3>
+                {% endfor %}
+
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h4>0 seconds</h4>
-                            <p>The Big Bang - Universe begins from a singularity</p>
+                    {% for Faktlar in Faktlars %}
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>{{ Faktlar.title }}</h4>
+                                <p>{{ Faktlar.description }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h4>380,000 years</h4>
-                            <p>First atoms form, universe becomes transparent</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h4>1 billion years</h4>
-                            <p>First stars and galaxies begin to form</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h4>13.8 billion years</h4>
-                            <p>Present day - Universe continues expanding</p>
-                        </div>
-                    </div>
+                    {% endfor %}
+
+
                 </div>
             </div>
         </div>
@@ -226,7 +214,8 @@
         <div class="contact-content">
             <div class="contact-info">
                 <h3>Yangilanib turing</h3>
-                <p>Eng so'nggi kashfiyotlar va kosmik tadqiqotlar yangiliklari uchun bizning axborot byulletenimizga obuna bo'ling.</p>
+                <p>Eng so'nggi kashfiyotlar va kosmik tadqiqotlar yangiliklari uchun bizning axborot byulletenimizga
+                    obuna bo'ling.</p>
                 <div class="contact-stats">
                     <div class="contact-stat">
                         <span class="stat-number">50K+</span>
