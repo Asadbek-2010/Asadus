@@ -1,8 +1,7 @@
-from django.shortcuts import render
 from django.views.generic import CreateView
 
 from apps.forms import RegisterModelForm
-from apps.models import Planet, Galaxy, Group, Gallery, Exploration, About, Holes_Matter, Register, Faktlar, Fakt_turi
+from apps.models import Planet, Galaxy, Group, Gallery, Exploration, About, Holes_Matter, Register
 
 
 def index_view(request):
@@ -21,7 +20,11 @@ def index_view(request):
     return render(request, 'index.html', context)
 
 
-def universe_view(request):
+from django.shortcuts import render
+from .models import Fakt_turi
+
+
+def home(request):
     fakt_turlari = Fakt_turi.objects.prefetch_related('faktlar').all()
     return render(request, 'index.html', {'fakt_turlari': fakt_turlari})
 
