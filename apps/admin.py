@@ -20,19 +20,17 @@ admin.site.register(Register)
 from django.contrib import admin
 from .models import Fakt_turi, Faktlar
 
-
 class FaktlarInline(admin.TabularInline):
     model = Faktlar
     extra = 1
-
 
 @admin.register(Fakt_turi)
 class FaktTuriAdmin(admin.ModelAdmin):
     list_display = ('title',)
     inlines = [FaktlarInline]
 
-
 @admin.register(Faktlar)
 class FaktlarAdmin(admin.ModelAdmin):
     list_display = ('title', 'fakt')
     list_filter = ('fakt',)
+

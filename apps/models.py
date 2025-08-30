@@ -2,9 +2,6 @@ from django.contrib.auth.models import User
 from django.db.models import CharField, TextField, Model, ForeignKey, CASCADE, \
     FloatField, ImageField, TextChoices
 from django.forms import EmailField
-from django.db import models
-
-
 
 
 #
@@ -113,6 +110,9 @@ class Register(Model):
         return self.name
 
 
+from django.db import models
+
+
 class Fakt_turi(models.Model):
     title = models.CharField(max_length=100)
 
@@ -127,4 +127,3 @@ class Faktlar(models.Model):
 
     def __str__(self):
         return self.title
-
