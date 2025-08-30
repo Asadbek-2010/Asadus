@@ -84,8 +84,12 @@
                                     <p>{{ fakt.description }}</p>
                                 </div>
                             </div>
+                        {% empty %}
+                            <p>Hozircha faktlar mavjud emas.</p>
                         {% endfor %}
                     </div>
+                {% empty %}
+                    <p>Hozircha fakt turlari mavjud emas.</p>
                 {% endfor %}
             </div>
 

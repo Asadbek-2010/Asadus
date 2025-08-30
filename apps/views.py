@@ -14,10 +14,11 @@ def index_view(request):
         'Abouts': About.objects.all(),
         'holes_matters': Holes_Matter.objects.all(),
         'registers': Register.objects.all(),
-        'interests': Register.Interests.choices
-
+        'interests': Register.Interests.choices,
+        'fakt_turlari': Fakt_turi.objects.prefetch_related('faktlar').all()
     }
     return render(request, 'index.html', context)
+
 
 
 from django.shortcuts import render
