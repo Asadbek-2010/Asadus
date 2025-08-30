@@ -2,6 +2,9 @@ from django.contrib.auth.models import User
 from django.db.models import CharField, TextField, Model, ForeignKey, CASCADE, \
     FloatField, ImageField, TextChoices
 from django.forms import EmailField
+from django.db import models
+
+
 
 
 #
@@ -110,17 +113,18 @@ class Register(Model):
         return self.name
 
 
-class Faktlar(Model):
-    title = CharField(max_length=100)
-    description = TextField()
-    fakt = ForeignKey('apps.Fakt_turi', CASCADE, related_name='fakt')
+class Fakt_turi(models.Model):
+    title = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
 
 
-class Fakt_turi(Model):
-    title = CharField(max_length=100)
+class Faktlar(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    fakt = models.ForeignKey(Fakt_turi, on_delete=models.CASCADE, related_name='faktlar')
 
     def __str__(self):
         return self.title
+

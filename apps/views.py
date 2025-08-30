@@ -15,12 +15,15 @@ def index_view(request):
         'Abouts': About.objects.all(),
         'holes_matters': Holes_Matter.objects.all(),
         'registers': Register.objects.all(),
-        'Faktlars': Faktlar.objects.all(),
-        'Fakt_turis': Fakt_turi.objects.all(),
         'interests': Register.Interests.choices
 
     }
     return render(request, 'index.html', context)
+
+
+def universe_view(request):
+    fakt_turlari = Fakt_turi.objects.prefetch_related('faktlar').all()
+    return render(request, 'index.html', {'fakt_turlari': fakt_turlari})
 
 
 class RegisterCreateView(CreateView):
@@ -28,8 +31,4 @@ class RegisterCreateView(CreateView):
     form_class = RegisterModelForm
     success_url = '/'
 
-
-
-
 # CRUD - Create, Read, Update, Delete
-
